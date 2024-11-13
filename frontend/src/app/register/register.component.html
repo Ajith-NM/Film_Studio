@@ -1,0 +1,62 @@
+<section>
+  <img src="images/netflix_bg.jpg" alt="background image"> 
+  <!-- images/netflix_bg_image.webp -->
+  <div class="register">
+    @if(isLogin){
+    <div class="login">
+
+      <h2>sign in</h2>
+
+      <input type="text" placeholder="email or phone number" />
+      <input type="text" placeholder="password" />
+      <button>Sign In</button>
+
+      <div class="autologin">
+        <label for="remember_me">
+          <input type="checkbox" name="remember_me" id="remember_me" />
+          Remember me</label
+        >
+        <p>Need help?</p>
+      </div>
+
+      <div class="text_contents">
+        <p>New to MovieHub? <span (click)="changeIsLogin()">Sign Up now</span></p>
+        <p class="texts">
+          This page is protected by Google reCAPTCHA to ensure you're not a bot
+        </p>
+      </div>
+
+    </div>
+  }
+  @else{
+    
+    <div class="signup">
+
+        <h2>sign up</h2>
+        <input type="text" placeholder="username" />
+        <input type="text" placeholder="email or phone number" />
+        <input type="password" placeholder="password" />
+        <button>Sign Up</button>
+  
+        <div class="autologin">
+          <!-- <label for="remember_me">
+            <input type="checkbox" name="remember_me" id="remember_me" />
+            Remember me</label
+          > -->
+          <p>Need help?</p>
+        </div>
+  
+        <div class="text_contents">
+          <p>Already have an account? <span (click)="changeIsLogin()">Sign In now</span></p>
+          <p class="texts">
+            This page is protected by Google reCAPTCHA to ensure you're not a bot
+          </p>
+        </div>
+  
+      </div>
+
+    }
+  </div>
+</section>
+
+
