@@ -1,6 +1,7 @@
 section {
   min-height: calc(100vh - 62px);
   background-color: #000;
+  color: #fff;
 }
 .slider {
   height: calc(100vh - 62px);
@@ -94,21 +95,27 @@ img {
   animation: slidings 0.4s 0.7s ease-in-out 1 forwards;
 }
 
-.popular-movies {
+.popular-movie-slider{
   width: 100vw;
   z-index: 1;
   position: absolute;
   bottom: 2%;
-  
   overflow: hidden;
 }
-.popular-movies h2 {
+ .movie-slider{
+  margin-top: 20px;
+  width: 100vw;
+  overflow: hidden;
+ }
+.popular-movie-slider h2,
+ .movie-slider h2 {
   font-size: 19px;
   font-weight: 500;
   padding-left: 3%;
   width: fit-content;
 }
-.popular-movies h2:hover{
+.popular-movie-slider h2:hover,
+.movie-slider h2:hover{
     color: var(--primary-color);
 }
 .scroller {
@@ -117,7 +124,6 @@ img {
   gap: 10px;
   align-items: center;
   justify-content: flex-start;
-  /* flex-flow: row; */
   overflow-x: auto;
   padding-left: 3%;
 }

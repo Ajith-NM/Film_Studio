@@ -13,12 +13,22 @@
 
   --primary-color:#e50a15;
   --background-color: #020101;
+  
 
 }
 body{
   margin: 0 auto;
 }
 button{
+  outline: none;
+  border: none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+input{
   outline: none;
   border: none;
 }

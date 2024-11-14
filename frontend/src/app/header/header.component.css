@@ -24,7 +24,8 @@ li{
  transition: 180ms;
  cursor: pointer;
 }
-li:hover{
+li:hover,
+.active{
     color: var(--primary-color);
 }
 .logo {
