@@ -19,14 +19,14 @@ ul {
   align-items: center;
   gap: 20px;
 }
-li{
- font-size: 14px;
- transition: 180ms;
- cursor: pointer;
+li {
+  font-size: 14px;
+  transition: 180ms;
+  cursor: pointer;
 }
 li:hover,
-.active{
-    color: var(--primary-color);
+.active {
+  color: var(--primary-color);
 }
 .logo {
   width: fit-content;
@@ -35,19 +35,19 @@ li:hover,
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: none;
+}
+.logo p,
+.logo span {
+  text-transform: capitalize;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.logo span {
+  color: var(--primary-color);
+}
 
-}
-.logo p,.logo span{
-   text-transform: capitalize;
-   font-family: "Oswald", sans-serif;
-   font-size: 20px;
-   font-weight: 700;
-}
-.logo span{
-    color: var(--primary-color);
-}
-.search-box {
+/* .search-box {
   margin: 5px 10px;
   padding: 5px 16px;
   display: flex;
@@ -56,8 +56,8 @@ li:hover,
   border-radius: 10px;
   border: 1px solid #e6eaef;
   background-color: #eceff3;
-}
-.search-box input {
+} */
+/* .search-box input {
   width: 100%;
   border: none;
   outline: none;
@@ -65,11 +65,21 @@ li:hover,
   font-size: 14px;
   font-weight: 400;
   background-color: transparent;
-}
-.icon {
+} */
+/* .icon {
   display: flex;
   width: 24px;
   height: 24px;
   justify-content: center;
   align-items: center;
+} */
+button {
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #fff;
+  background-color: var(--primary-color);
+  margin: 5px 10px;
+  padding: 5px 16px;
+  border-radius: 10px;
+  color: #fff;
 }

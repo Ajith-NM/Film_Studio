@@ -18,11 +18,12 @@ export const CheckUser = async (email) => {
 };
 
 // insert a new user
-export const InsertUser = async ( email,password,) => {
+export const InsertUser = async ( email,password,username) => {
   return new Promise((resolve, reject) => {
     Users.create({
       email: email,
-      password: password
+      password: password,
+      username:username,
     })
       .then(() => {
         resolve(true);

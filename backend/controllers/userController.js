@@ -4,14 +4,16 @@ import { CheckUser ,InsertUser} from "../services/userService.js";
 // @ /user/postSignup
 export const postSignup = async (req, res) => {
     try {
-      let { password, email } = req.body;
+      let { password, email, username } = req.body;
       let previousUser = await CheckUser(email)
       if (previousUser) {
-        res.status(400).json({ status: false, msg: "email already exist" });
+        res
+          .status(400)
+          .json({ status: false, response: "email already exist" });
         return;
       } 
       else {
-            let user = await InsertUser( email, password)
+            let user = await InsertUser( email, password,username)
             if (user) {
               res.status(200).json({ status: true,response: "new user created" });
               return;
@@ -55,7 +57,7 @@ export const postLogin = async (req, res) => {
 
   // @  checking the user is already logged or not
 // @ /user/Authentication
-export const auth=async(req,res)=>{
-    res.status(200).json({status:true,response:"alredy logged"});
+// export const auth=async(req,res)=>{
+//     res.status(200).json({status:true,response:"alredy logged"});
    
-   }
+//    }

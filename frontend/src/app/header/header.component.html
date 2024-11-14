@@ -38,13 +38,13 @@
       </div>
       <ul>
         <li [routerLink]="['/home']" [routerLinkActive]="'active'">Home</li>
-        <li [routerLink]="['/home1']" [routerLinkActive]="'active'">Movies</li>
-        <li [routerLink]="['/home2']" [routerLinkActive]="'active'">TV Shows</li>
-        <li [routerLink]="['/home3']" [routerLinkActive]="'active'">My List</li>
+        <li [routerLink]="['/videos/movies']" [routerLinkActive]="'active'">Movies</li>
+        <li [routerLink]="['/videos/tvshows']" [routerLinkActive]="'active'">TV Shows</li>
+        <li [routerLink]="['/mylists']" [routerLinkActive]="'active'">My List</li>
       </ul>
     </div>
     <div class="right">
-      <div class="search-box">
+      <!-- <div class="search-box">
         <div class="icon">
           <svg
             fill="#e50a15"
@@ -74,7 +74,8 @@
           </svg>
         </div>
         <input type="text" placeholder="find movie" />
-      </div>
+      </div> -->
+     <button>LogOut</button>
     </div>
   </nav>
 </header>
