@@ -5,6 +5,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 9;
+  min-height: 62px;
 }
 nav {
   margin: 0 3%;
@@ -42,6 +43,9 @@ li:hover,
   font-family: "Oswald", sans-serif;
   font-size: 20px;
   font-weight: 700;
+}
+.logo p{
+  margin-left:5px;
 }
 .logo span {
   color: var(--primary-color);

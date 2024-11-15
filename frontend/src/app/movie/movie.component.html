@@ -1,16 +1,19 @@
 <section>
   <div class="movie">
     <div class="bgimage">
-      <img src="images/terrifier.png" alt="" />
+      <img [src]="imageurl + content.backdrop_path" [alt]="content.name || content.title"/>
     </div>
 
     <div class="poster">
-      <img src="images/terrifier.png" alt="" />
+      <img [src]="imageurl + content.poster_path" [alt]="content.name || content.title"/>
     </div>
     <div class="movie-details">
-      <h2>Terrifier</h2>
-      <span>horror</span>
-
+      <h2> {{ content.name || content.title }}</h2>
+      <div class="genres">
+       @for (genres of content.genres; track genres;) {
+      <span>{{genres.name}},</span> 
+       }
+       </div>
       <button>
         <span>
           <svg
@@ -53,14 +56,8 @@
       <div class="overview">
         <span>overview</span>
         <p>
-          Five years after surviving Art the Clown's Halloween massacre, Sienna
-          and Jonathan are still struggling to rebuild their shattered lives. As
-          the holiday season approaches, they try to embrace the Christmas
-          spirit and leave the horrors of the past behind. But just when they
-          think they're safe, Art returns, determined to turn their holiday
-          cheer into a new nightmare. The festive season quickly unravels as Art
-          unleashes his twisted brand of terror, proving that no holiday is
-          safe.
+          {{ content.overview }}
+      
         </p>
       </div>
     </div>
@@ -69,22 +66,16 @@
   <div class="movie-slider">
     <h2>cast</h2>
     <div class="scroller">
+       @for (actor of actors; track actor;) {
       <div class="card">
         <div class="image">
-          <img src="images/terrifier.png" alt="terrifier"/>
+          <img [src]="imageurl + actor.profile_path"/>
         </div>
         <div class="movie-title">
-          <p>Terrifier</p>
+          <p>{{actor.name}}</p>
         </div>
       </div>
-      <div class="card">
-        <div class="image">
-          <img src="images/venom.jpg" alt="venom" />
-        </div>
-        <div class="movie-title">
-          <p>Venom</p>
-        </div>
-      </div>
+    }
     </div>
   </div>
   <div class="hr-line"></div>

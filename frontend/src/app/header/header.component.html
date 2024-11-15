@@ -40,7 +40,7 @@
         <li [routerLink]="['/home']" [routerLinkActive]="'active'">Home</li>
         <li [routerLink]="['/videos/movies']" [routerLinkActive]="'active'">Movies</li>
         <li [routerLink]="['/videos/tvshows']" [routerLinkActive]="'active'">TV Shows</li>
-        <li [routerLink]="['/mylists']" [routerLinkActive]="'active'">My List</li>
+        <li [routerLink]="['/****']" [routerLinkActive]="'active'">My List</li>
       </ul>
     </div>
     <div class="right">
@@ -75,7 +75,7 @@
         </div>
         <input type="text" placeholder="find movie" />
       </div> -->
-     <button>LogOut</button>
+     <button (click)="logOut()">LogOut</button>
     </div>
   </nav>
 </header>

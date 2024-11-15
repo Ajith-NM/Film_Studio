@@ -30,7 +30,11 @@ section .movie {
   font-weight: 500;
   text-transform: capitalize;
 }
-.movie-details span {
+.genres{
+display: flex;
+gap: 8px;
+}
+.movie-details .genres span {
   font-weight: 400;
   font-size: 12px;
   font-style: italic;
@@ -62,10 +66,10 @@ section .movie {
   position: absolute;
   top: 0;
   left: 0;
-  width: 104%;
-  height: 104%;
-  filter: blur(3px);
-  transform: translate(-4px, -4px);
+  width: 100%;
+  height: 100%;
+  /* filter: blur(1px); */
+  /* transform: translate(-4px, -4px); */
   z-index: -2;
 }
 .movie .bgimage::after {
@@ -74,7 +78,7 @@ section .movie {
   width: 103%;
   height: 103%;
   inset: 0 0 0 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   border: none;
   outline: none;
 }
@@ -117,10 +121,13 @@ section .movie {
   overflow-x: auto;
   padding-left: 3%;
 }
+.scroller::-webkit-scrollbar{
+  height: 0;
+}
 .card {
   min-width: 130px;
   width: 135px;
-  height: 200px;
+  height: 225px;
   margin: 5px 0 10px;
   overflow: hidden;
   position: relative;
@@ -137,7 +144,7 @@ section .movie {
 }
 .movie-title {
   width: 100%;
-  height: 30px;
+  height: 50px;
   overflow: hidden;
   padding: 2px 0 0 8px;
 }
@@ -182,7 +189,7 @@ section .movie {
   height: 64px;
   padding: 8px;
   opacity: 0;
-  filter: blur(3px);
+  /* filter: blur(3px); */
   transition: 0.5s;
 }
 .suggestion .movie-title span {

@@ -20,7 +20,7 @@ section::after {
   height: 100%;
   left: 0;
   top: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
 }
 .register {
   z-index: 1;

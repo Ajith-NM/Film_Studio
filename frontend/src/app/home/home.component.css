@@ -7,7 +7,6 @@ section {
   height: calc(100vh - 62px);
   position: relative;
   color: #fff;
-  background-color: rgb(142, 170, 161);
 }
 
 .slider .item {
@@ -130,6 +129,9 @@ img {
   overflow-x: auto;
   padding-left: 3%;
 }
+.scroller::-webkit-scrollbar{
+  height: 0;
+}
 .card {
   min-width: 150px;
   width: 150px;
@@ -153,7 +155,7 @@ img {
   transition: 0.5s;
 }
 .card:hover .movie-title {
-  transform: translateY(-64px);
+  transform: translateY(-100%);
   opacity: 1;
   filter: blur(0px);
   z-index: 1;
@@ -170,6 +172,7 @@ img {
 .movie-title {
   width: 100%;
   height: 64px;
+  min-height: fit-content;
   padding: 8px;
   opacity: 0;
   filter: blur(3px);
@@ -180,6 +183,8 @@ img {
 }
 .movie-title p{
   color: #e3e1e1;
+  max-height: fit-content;
+  overflow: hidden;
 }
 .hr-line{
   width: calc(100% - 6%);

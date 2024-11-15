@@ -8,8 +8,6 @@ import {
 } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http';
-import { json } from 'stream/consumers';
 import { catchError, throwError } from 'rxjs';
 
 @Component({
@@ -21,11 +19,16 @@ import { catchError, throwError } from 'rxjs';
 })
 export class RegisterComponent implements OnInit {
   constructor(private apiService: ApiService, private route: Router) {}
+
+
   loginForm: FormGroup;
   signupForm: FormGroup;
   isLogin = true;
-  err_msg=""
+  err_msg = '';
   ngOnInit(): void {
+    if (localStorage.getItem('loggedUser')) {
+      this.route.navigateByUrl('/home');
+    }
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
@@ -47,14 +50,14 @@ export class RegisterComponent implements OnInit {
     this.isLogin = !this.isLogin;
     this.loginForm.reset();
     this.signupForm.reset();
-    this.err_msg=''
+    this.err_msg = '';
   }
   onLogin() {
     this.apiService
       .postLogin(this.loginForm.value)
       .pipe(
         catchError((error) => {
-          this.err_msg = "* " + error.error.response
+          this.err_msg = '* ' + error.error.response;
           return throwError(
             () =>
               new Error('Oops! Something went wrong. Please try again later.')
@@ -63,28 +66,34 @@ export class RegisterComponent implements OnInit {
       )
       .subscribe((data: { status: boolean; response: any }) => {
         if (data.status) {
-          this.err_msg = ''
+          this.err_msg = '';
           console.log(data.response);
-          
-          // this.route.navigateByUrl("/home")
+           
+
+
+          localStorage.setItem('loggedUser', data.response.user_Id);
+          this.route.navigateByUrl('/home');
         }
       });
-    
   }
   onSignup() {
     console.log(this.signupForm.value);
-    this.apiService.postSignup(this.signupForm.value).pipe(
-      catchError((error) => {
-        this.err_msg = '* ' + error.error.response;
-        return throwError(
-          () => new Error('Oops! Something went wrong. Please try again later.')
-        );
-      })
-    )
-   .subscribe((data: { status: boolean; response: any }) => {
+    this.apiService
+      .postSignup(this.signupForm.value)
+      .pipe(
+        catchError((error) => {
+          this.err_msg = '* ' + error.error.response;
+          return throwError(
+            () =>
+              new Error('Oops! Something went wrong. Please try again later.')
+          );
+        })
+      )
+      .subscribe((data: { status: boolean; response: any }) => {
         if (data.status) {
           this.changeIsLogin();
         }
+        this.signupForm.reset();
       });
   }
 }
